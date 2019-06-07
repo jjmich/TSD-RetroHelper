@@ -1,0 +1,49 @@
+﻿@page
+@model TSD_RetroHelper.Pages.RetroItems1.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RetroItem</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RetroItem.Rating)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RetroItem.Rating)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RetroItem.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RetroItem.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RetroItem.Comment)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RetroItem.Comment)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RetroItem.RetroBoard)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RetroItem.RetroBoard.ID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RetroItem.ColumnId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RetroItem.ColumnId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.RetroItem.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
