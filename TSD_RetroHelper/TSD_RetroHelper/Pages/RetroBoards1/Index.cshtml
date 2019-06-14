@@ -5,39 +5,110 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<style>
+    .board-list-name {
+        text-align: center;
+        font-size: 24pt;
+    }
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.RetroBoard[0].Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.RetroBoard[0].RetroDate)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.RetroBoard) {
-        <tr>
-            <td>
+    .column-left {
+        float: left;
+        width: 30%;
+        padding: 4px;
+    }
+
+    .column-right {
+        float: right;
+        width: 40%;
+        text-align: center;
+    }
+
+    .column-center {
+        display: inline-block;
+        width: 30%;
+        text-align: center;
+    }
+
+    .container {
+        font-family: Verdana;
+    }
+
+    .create-link {
+        text-align: center;
+        padding: 2px;
+        margin: 3px;
+    }
+
+    .retro-board-header {
+        margin-left: 5px;
+        margin-right: 5px;
+        padding: 10px;
+        color: black;
+    }
+
+    .retro-board-container {
+        margin-left: 5px;
+        margin-right: 5px;
+        padding: 10px;
+        border-radius: 20px;
+        background-color: lightcyan;
+        color: black;
+    }
+
+    p#column-title {
+        color: black;
+        font-size: 18pt;
+        padding: 4px;
+        text-align: center;
+    }
+
+    p#name {
+        float: left;
+        font-size: 15pt;
+    }
+
+    p#date {
+        font-size: 15pt;
+    }
+
+    p#actions {
+        font-size: 15pt;
+    }
+
+    .item-links {
+        float: right;
+    }
+</style>
+
+
+<div class="container">
+    <div class="board-list-name">Retro Boards</div>
+    <div class="create-link">
+        <a asp-page="Create">Add a new board</a>
+    </div>
+    <div class="retro-board-header">
+        <div class="column-left"><p id="name">Name</p></div>
+        <div class="column-center"><p id="date">Retro Date</p></div>
+        <div class="column-right"><p id="actions">Actions</p></div>
+    </div>
+    @foreach (var item in Model.RetroBoard)
+    {
+        <div class="retro-board-container">
+
+            <div class="column-left">
                 @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
+            </div>
+            <div class="column-center">
                 @Html.DisplayFor(modelItem => item.RetroDate)
-            </td>
-            <td>
+            </div>
+            <div class="column-right">
                 <a asp-page="../RetroItems1/Index" asp-route-id="@item.ID" asp-route-name="@item.Name">View Board</a> |
                 <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
                 <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+            </div>
+        </div>
+        <br />
+    }
+
+</div>
