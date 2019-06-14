@@ -89,27 +89,18 @@
     }
 </style>
 
-@*<<<<<<< HEAD
-    <p>
-        <a asp-page="Create" asp-route-ColumnId="1">Create New 1</a>
-        <a asp-page="Create" asp-route-ColumnId="2">Create New 2</a>
-        <a asp-page="Create" asp-route-ColumnId="3">Create New 3</a>
-    </p>
-    =======
-    >>>>>>> style changes*@
-
 <div class="container">
-    <div class="board-name">BOARD NAME</div>
+    <div class="board-name">@Request.Query["name"]</div>
     <div class="column-left">
         <p id="column-title">
             Went Well
         </p>
         <div class="create-link">
-            <a asp-page="Create" asp-route-ColumnId="1">Create New</a>
+            <a asp-page="Create" asp-route-ColumnId="1" asp-route-id=@Request.Query["id"] asp-route-name=@Request.Query["name"]>Create New</a>
         </div>
         @foreach (var item in Model.RetroItem)
         {
-            @if (item.ColumnId == 1)
+            @if (item.ColumnId == 1 && item.RetroBoardRefId == int.Parse(Request.Query["id"]))
             {
                 <div class="retro-item-container-left">
                     <p id="name">@Html.DisplayFor(modelItem => item.Name) </p>
@@ -132,12 +123,12 @@
             To Improve
         </p>
         <div class="create-link">
-            <a asp-page="Create" asp-route-ColumnId="2">Create New</a>
+            <a asp-page="Create" asp-route-ColumnId="2" asp-route-id=@Request.Query["id"] asp-route-name=@Request.Query["name"]>Create New</a>
         </div>
 
         @foreach (var item in Model.RetroItem)
         {
-            @if (item.ColumnId == 2)
+            @if (item.ColumnId == 2 && item.RetroBoardRefId == int.Parse(Request.Query["id"]))
             {
                 <div class="retro-item-container-center">
                     <p id="name">@Html.DisplayFor(modelItem => item.Name) </p>
@@ -158,11 +149,11 @@
             Action Points
         </p>
         <div class="create-link">
-            <a asp-page="Create" asp-route-ColumnId="3">Create New</a>
+            <a asp-page="Create" asp-route-ColumnId="3" asp-route-id=@Request.Query["id"] asp-route-name=@Request.Query["name"]>Create New</a>
         </div>
         @foreach (var item in Model.RetroItem)
         {
-            @if (item.ColumnId == 3)
+            @if (item.ColumnId == 3 && item.RetroBoardRefId == int.Parse(Request.Query["id"]))
             {
                 <div class="retro-item-container-right">
                     <p id="name">@Html.DisplayFor(modelItem => item.Name) </p>
