@@ -26,6 +26,6 @@
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.RetroBoard.ID">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
+    <a asp-page="./Edit" asp-route-id=@Request.Query["id"] asp-route-name=@Request.Query["name"]>Edit</a> |
+    <a asp-page="./Index" asp-route-id=@Request.Query["id"] asp-route-name=@Request.Query["name"]>Back to List</a>
 </div>

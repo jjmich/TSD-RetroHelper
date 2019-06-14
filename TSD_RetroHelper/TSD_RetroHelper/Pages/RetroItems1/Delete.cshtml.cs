@@ -53,7 +53,7 @@ namespace TSD_RetroHelper.Pages.RetroItems1
                 await _context.SaveChangesAsync();
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("/RetroBoards1/Index");
         }
     }
 }

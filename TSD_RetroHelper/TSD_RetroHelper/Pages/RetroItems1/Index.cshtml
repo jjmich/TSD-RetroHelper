@@ -109,9 +109,9 @@
                     <p id="comment">@Html.DisplayFor(modelItem => item.Comment)</p>
                     <br />
 
-                    <a asp-page="./Edit" asp-route-id="@item.Id">+</a>
-                    <a asp-page="./Details" asp-route-id="@item.Id">?</a>
-                    <a asp-page="./Delete" asp-route-id="@item.Id">-</a>
+                    <a asp-page="./Edit" asp-route-id="@item.Id" asp-route-name=@Request.Query["name"]>+</a>
+                    @*<a asp-page="./Details" asp-route-id="@item.Id" asp-route-name=@Request.Query["name"]>?</a>*@
+                    <a asp-page="./Delete" asp-route-id="@item.Id" asp-route-name=@Request.Query["name"]>-</a>
                 </div>
                 <br />
             }
@@ -136,9 +136,9 @@
                     <div style="        clear: both;"></div>
                     <p id="comment">@Html.DisplayFor(modelItem => item.Comment)</p>
                     <br />
-                    <a asp-page="./Edit" asp-route-id="@item.Id">+</a>
-                    <a asp-page="./Details" asp-route-id="@item.Id">?</a>
-                    <a asp-page="./Delete" asp-route-id="@item.Id">-</a>
+                    <a asp-page="./Edit" asp-route-id="@item.Id" asp-route-name=@Request.Query["name"]>+</a>
+                    @*<a asp-page="./Details" asp-route-id="@item.Id" asp-route-name=@Request.Query["name"]>?</a>*@
+                    <a asp-page="./Delete" asp-route-id="@item.Id" asp-route-name=@Request.Query["name"]>-</a>
                 </div>
                 <br />
             }
@@ -161,9 +161,9 @@
                     <div style="        clear: both;"></div>
                     <p id="comment">@Html.DisplayFor(modelItem => item.Comment)</p>
                     <br />
-                    <a asp-page="./Edit" asp-route-id="@item.Id">+</a>
-                    <a asp-page="./Details" asp-route-id="@item.Id">?</a>
-                    <a asp-page="./Delete" asp-route-id="@item.Id">-</a>
+                    <a asp-page="./Edit" asp-route-id="@item.Id" asp-route-name=@Request.Query["name"]>+</a>
+                    @*<a asp-page="./Details" asp-route-id="@item.Id" asp-route-name=@Request.Query["name"]>?</a>*@
+                    <a asp-page="./Delete" asp-route-id="@item.Id" asp-route-name=@Request.Query["name"]>-</a>
                 </div>
                 <br />
             }

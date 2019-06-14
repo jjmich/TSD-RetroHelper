@@ -3,6 +3,7 @@
 
 @{
     ViewData["Title"] = "Edit";
+    var retroItemId = Model.RetroItem.RetroBoardRefId;
 }
 
 <h2>Edit</h2>
@@ -47,7 +48,7 @@
 </div>
 
 <div>
-    <a asp-page="./Index">Back to List</a>
+    <a asp-page="./Index" asp-route-id=@retroItemId asp-route-name=@Request.Query["name"]>Back to List</a>
 </div>
 
 @section Scripts {

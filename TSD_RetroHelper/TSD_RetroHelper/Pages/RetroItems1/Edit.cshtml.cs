@@ -65,7 +65,7 @@ namespace TSD_RetroHelper.Pages.RetroItems1
                 }
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("/RetroBoards1/Index");
         }
 
         private bool RetroItemExists(int id)
