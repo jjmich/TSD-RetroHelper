@@ -33,7 +33,10 @@ namespace TSD_RetroHelper
             });
 
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc().AddRazorPagesOptions(opts =>
+            {
+                opts.Conventions.AddPageRoute("/RetroBoards1/Index", "/");
+            }).SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddDbContext<TSD_RetroHelperContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("TSD_RetroHelperContext")));
