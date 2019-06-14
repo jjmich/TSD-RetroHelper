@@ -1,4 +1,4 @@
-﻿@page
+@page
 @model TSD_RetroHelper.Pages.RetroItems1.CreateModel
 
 @{
@@ -34,7 +34,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="RetroItem.ColumnId" class="control-label"></label>
-                <input asp-for="RetroItem.ColumnId" class="form-control" />
+                <input asp-for="RetroItem.ColumnId" class="form-control" value=@Request.Query["ColumnId"]/>
                 <span asp-validation-for="RetroItem.ColumnId" class="text-danger"></span>
             </div>
             <div class="form-group">

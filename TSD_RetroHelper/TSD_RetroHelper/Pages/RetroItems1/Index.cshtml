@@ -1,4 +1,4 @@
-﻿@page
+@page
 @model TSD_RetroHelper.Pages.RetroItems1.IndexModel
 
 @{
@@ -33,7 +33,9 @@
 <h2>Index</h2>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create" asp-route-ColumnId="1">Create New 1</a>
+    <a asp-page="Create" asp-route-ColumnId="2">Create New 2</a>
+    <a asp-page="Create" asp-route-ColumnId="3">Create New 3</a>
 </p>
 
 <div class="container">

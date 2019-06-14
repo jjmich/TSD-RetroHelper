@@ -1,11 +1,11 @@
 @page
-@model TSD_RetroHelper.Pages.RetroItems1.EditModel
+@model TSD_RetroHelper.Pages.RetroItems.CreateNewGoodModel
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Create";
 }
 
-<h2>Edit</h2>
+<h2>Create</h2>
 
 <h4>RetroItem</h4>
 <hr />
@@ -13,7 +13,6 @@
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="RetroItem.Id" />
             <div class="form-group">
                 <label asp-for="RetroItem.Rating" class="control-label"></label>
                 <input asp-for="RetroItem.Rating" class="form-control" />
@@ -30,24 +29,14 @@
                 <span asp-validation-for="RetroItem.Comment" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="RetroItem.RetroBoardRefId" class="control-label"></label>
-                <select asp-for="RetroItem.RetroBoardRefId" class="form-control" asp-items="ViewBag.RetroBoardRefId"></select>
-                <span asp-validation-for="RetroItem.RetroBoardRefId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="RetroItem.ColumnId" class="control-label"></label>
-                <input asp-for="RetroItem.ColumnId" class="form-control" />
-                <span asp-validation-for="RetroItem.ColumnId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="./Index">Back to List</a>
+    <a asp-page="Index">Back to List</a>
 </div>
 
 @section Scripts {

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -20,7 +20,8 @@ namespace TSD_RetroHelper.Pages.RetroItems1
 
         public IActionResult OnGet()
         {
-        ViewData["RetroBoardRefId"] = new SelectList(_context.RetroBoard, "ID", "ID");
+            ViewData["RetroBoardRefId"] = new SelectList(_context.RetroBoard, "ID", "ID");
+            //ViewData["ColumnId"] = Request.QueryString("ColumnId")
             return Page();
         }
 
