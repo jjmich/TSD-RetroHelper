@@ -5,9 +5,14 @@
     ViewData["Title"] = "Index";
 }
 <style>
+    .board-name {
+        text-align: center;
+        font-size: 24pt;
+    }
     .column-left {
         float: left;
         width: 33.333%;
+        padding: 4px;
     }
 
     .column-right {
@@ -21,93 +26,156 @@
     }
 
     .container {
+        font-family: Verdana;
+    }
+    .create-link{
+        text-align:center;
+        padding: 2px;
+        margin: 3px;
     }
 
     .retro-item-container-left {
+        margin-left: 5px;
+        margin-right: 5px;
+        padding: 5px;
+        border-radius: 20px;
+        background-color: lightgreen;
+        color: #fff;
     }
+
     .retro-item-container-center {
+        margin-left: 5px;
+        margin-right: 5px;
+        padding: 5px;
+        border-radius: 20px;
+        background-color: #ef4040;
+        color: #fff;
     }
+
     .retro-item-container-right {
+        margin-left: 5px;
+        margin-right: 5px;
+        padding: 5px;
+        border-radius: 20px;
+        background-color: dodgerblue;
+        color: #fff;
+    }
+    p#column-title {
+        color: black;
+        font-size: 18pt;
+        padding: 4px;
+        text-align: center;
+    }
+
+    p#comment {
+        text-align: justify;
+    }
+
+    p#name {
+        float: left;
+        font-size: 16pt;
+    }
+
+    p#rating {
+        float: right;
+        font-size: 16pt;
+    }
+
+    p#item-links {
+        float: right;
     }
 </style>
-<h2>Index</h2>
 
+@*<<<<<<< HEAD
 <p>
     <a asp-page="Create" asp-route-ColumnId="1">Create New 1</a>
     <a asp-page="Create" asp-route-ColumnId="2">Create New 2</a>
     <a asp-page="Create" asp-route-ColumnId="3">Create New 3</a>
 </p>
+=======
+>>>>>>> style changes*@
 
 <div class="container">
+    <div class="board-name">BOARD NAME</div>
     <div class="column-left">
-        <h3>Went Well</h3>
-        <div style="retro-item-container-left">
-            @foreach (var item in Model.RetroItem)
-            {
-                @if (item.ColumnId == 1)
-                {
-                    <h4>@Html.DisplayNameFor(model => model.RetroItem[0].Rating)</h4>
-                    @Html.DisplayFor(modelItem => item.Rating)
-                    <h4>@Html.DisplayNameFor(model => model.RetroItem[0].Name)</h4>
-                    @Html.DisplayFor(modelItem => item.Name)
-                    <h4>@Html.DisplayNameFor(model => model.RetroItem[0].Comment)</h4>
-                    @Html.DisplayFor(modelItem => item.Comment)
-                    <br />
-                    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a>
-                    <br />
-                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a>
-                    <br />
-                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-                }
-            }
+        <p id="column-title">
+            Went Well
+        </p>
+        <div class="create-link">
+            <a asp-page="Create">Create New</a>
         </div>
+            @foreach (var item in Model.RetroItem)
+        {
+            @if (item.ColumnId == 1)
+            {
+                <div class="retro-item-container-left">
+                    <p id="name">@Html.DisplayFor(modelItem => item.Name) </p>
+                    <p id="rating"> @Html.DisplayFor(modelItem => item.Rating)</p>
+                    <div style="clear: both;"></div>
+                    <p id="comment">@Html.DisplayFor(modelItem => item.Comment)</p>
+                    <br />
+
+                    <a asp-page="./Edit" asp-route-id="@item.Id">+</a>
+                    <a asp-page="./Details" asp-route-id="@item.Id">?</a>
+                    <a asp-page="./Delete" asp-route-id="@item.Id">-</a>
+                </div>
+                <br />
+            }
+        }
 
     </div>
     <div class="column-center">
-        <h3>To Improve</h3>
-        <div style="retro-item-container-center">
-            @foreach (var item in Model.RetroItem)
-            {
-                @if (item.ColumnId == 2)
-                {
-                    <h4>@Html.DisplayNameFor(model => model.RetroItem[0].Rating)</h4>
-                    @Html.DisplayFor(modelItem => item.Rating)
-                    <h4>@Html.DisplayNameFor(model => model.RetroItem[0].Name)</h4>
-                    @Html.DisplayFor(modelItem => item.Name)
-                    <h4>@Html.DisplayNameFor(model => model.RetroItem[0].Comment)</h4>
-                    @Html.DisplayFor(modelItem => item.Comment)
-                    <br />
-                    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a>
-                    <br />
-                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a>
-                    <br />
-                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-                }
-            }
+        <p id="column-title">
+            To Improve
+        </p>
+        <div class="create-link">
+            <a asp-page="Create">Create New</a>
         </div>
+
+        @foreach (var item in Model.RetroItem)
+        {
+            @if (item.ColumnId == 2)
+            {
+                <div class="retro-item-container-center">
+                    <p id="name">@Html.DisplayFor(modelItem => item.Name) </p>
+                    <p id="rating"> @Html.DisplayFor(modelItem => item.Rating)</p>
+                    <div style="        clear: both;"></div>
+                    <p id="comment">@Html.DisplayFor(modelItem => item.Comment)</p>
+                    <br />
+                    <a asp-page="./Edit" asp-route-id="@item.Id">+</a>
+                    <a asp-page="./Details" asp-route-id="@item.Id">?</a>
+                    <a asp-page="./Delete" asp-route-id="@item.Id">-</a>
+                </div>
+                <br />
+            }
+        }
+
+
     </div>
     <div class="column-right">
-        <h3>Action Points</h3>
-        <div style="retro-item-container-right">
-            @foreach (var item in Model.RetroItem)
-            {
-                @if (item.ColumnId == 3)
-                {
-                    <h4>@Html.DisplayNameFor(model => model.RetroItem[0].Rating)</h4>
-                    @Html.DisplayFor(modelItem => item.Rating)
-                    <h4>@Html.DisplayNameFor(model => model.RetroItem[0].Name)</h4>
-                    @Html.DisplayFor(modelItem => item.Name)
-                    <h4>@Html.DisplayNameFor(model => model.RetroItem[0].Comment)</h4>
-                    @Html.DisplayFor(modelItem => item.Comment)
-                    <br />
-                    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a>
-                    <br />
-                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a>
-                    <br />
-                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-                }
-            }
+        <p id="column-title">
+            Action Points
+        </p>
+        <div class="create-link">
+            <a asp-page="Create">Create New</a>
         </div>
+        @foreach (var item in Model.RetroItem)
+        {
+            @if (item.ColumnId == 3)
+            {
+                <div class="retro-item-container-right">
+                    <p id="name">@Html.DisplayFor(modelItem => item.Name) </p>
+                    <p id="rating"> @Html.DisplayFor(modelItem => item.Rating)</p>
+                    <div style="        clear: both;"></div>
+                    <p id="comment">@Html.DisplayFor(modelItem => item.Comment)</p>
+                    <br />
+                    <a asp-page="./Edit" asp-route-id="@item.Id">+</a>
+                    <a asp-page="./Details" asp-route-id="@item.Id">?</a>
+                    <a asp-page="./Delete" asp-route-id="@item.Id">-</a>
+                </div>
+                <br />
+            }
+        }
     </div>
 </div>
 
