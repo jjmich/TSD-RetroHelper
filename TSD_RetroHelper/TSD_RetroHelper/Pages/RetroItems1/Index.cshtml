@@ -9,6 +9,7 @@
         text-align: center;
         font-size: 24pt;
     }
+
     .column-left {
         float: left;
         width: 33.333%;
@@ -28,8 +29,9 @@
     .container {
         font-family: Verdana;
     }
-    .create-link{
-        text-align:center;
+
+    .create-link {
+        text-align: center;
         padding: 2px;
         margin: 3px;
     }
@@ -60,6 +62,7 @@
         background-color: dodgerblue;
         color: #fff;
     }
+
     p#column-title {
         color: black;
         font-size: 18pt;
@@ -87,13 +90,13 @@
 </style>
 
 @*<<<<<<< HEAD
-<p>
-    <a asp-page="Create" asp-route-ColumnId="1">Create New 1</a>
-    <a asp-page="Create" asp-route-ColumnId="2">Create New 2</a>
-    <a asp-page="Create" asp-route-ColumnId="3">Create New 3</a>
-</p>
-=======
->>>>>>> style changes*@
+    <p>
+        <a asp-page="Create" asp-route-ColumnId="1">Create New 1</a>
+        <a asp-page="Create" asp-route-ColumnId="2">Create New 2</a>
+        <a asp-page="Create" asp-route-ColumnId="3">Create New 3</a>
+    </p>
+    =======
+    >>>>>>> style changes*@
 
 <div class="container">
     <div class="board-name">BOARD NAME</div>
@@ -102,9 +105,9 @@
             Went Well
         </p>
         <div class="create-link">
-            <a asp-page="Create">Create New</a>
+            <a asp-page="Create" asp-route-ColumnId="1">Create New</a>
         </div>
-            @foreach (var item in Model.RetroItem)
+        @foreach (var item in Model.RetroItem)
         {
             @if (item.ColumnId == 1)
             {
@@ -129,7 +132,7 @@
             To Improve
         </p>
         <div class="create-link">
-            <a asp-page="Create">Create New</a>
+            <a asp-page="Create" asp-route-ColumnId="2">Create New</a>
         </div>
 
         @foreach (var item in Model.RetroItem)
@@ -149,15 +152,13 @@
                 <br />
             }
         }
-
-
     </div>
     <div class="column-right">
         <p id="column-title">
             Action Points
         </p>
         <div class="create-link">
-            <a asp-page="Create">Create New</a>
+            <a asp-page="Create" asp-route-ColumnId="3">Create New</a>
         </div>
         @foreach (var item in Model.RetroItem)
         {
@@ -178,52 +179,3 @@
         }
     </div>
 </div>
-
-@*<table class="table">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.RetroItem[0].Rating)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.RetroItem[0].Name)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.RetroItem[0].Comment)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.RetroItem[0].RetroBoard)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.RetroItem[0].ColumnId)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-    @foreach (var item in Model.RetroItem) {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Rating)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Comment)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.RetroBoard.ID)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ColumnId)
-                </td>
-                <td>
-                    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
-            </tr>
-    }
-        </tbody>
-    </table>*@
