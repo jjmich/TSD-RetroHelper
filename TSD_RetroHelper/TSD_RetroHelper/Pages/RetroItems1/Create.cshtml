@@ -28,11 +28,11 @@
                 <input asp-for="RetroItem.Comment" class="form-control" />
                 <span asp-validation-for="RetroItem.Comment" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="visibility:hidden">
                 <label asp-for="RetroItem.RetroBoardRefId" class="control-label"></label>
                 <input asp-for="RetroItem.RetroBoardRefId" class ="form-control" value=@Request.Query["id"]/>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="visibility:hidden">
                 <label asp-for="RetroItem.ColumnId" class="control-label"></label>
                 <input asp-for="RetroItem.ColumnId" class="form-control" value=@Request.Query["ColumnId"]/>
                 <span asp-validation-for="RetroItem.ColumnId" class="text-danger"></span>
