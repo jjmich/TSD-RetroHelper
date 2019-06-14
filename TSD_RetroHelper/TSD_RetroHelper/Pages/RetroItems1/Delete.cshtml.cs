@@ -53,7 +53,9 @@ namespace TSD_RetroHelper.Pages.RetroItems1
                 await _context.SaveChangesAsync();
             }
 
-            return RedirectToPage("/RetroBoards1/Index");
+            var retroItemId = RetroItem.RetroBoardRefId;
+
+            return Redirect($"/RetroItems1?id={retroItemId}");
         }
     }
 }

@@ -64,8 +64,9 @@ namespace TSD_RetroHelper.Pages.RetroItems1
                     throw;
                 }
             }
+            var retroItemId = RetroItem.RetroBoardRefId;
 
-            return RedirectToPage("/RetroBoards1/Index");
+            return Redirect($"/RetroItems1?id={retroItemId}");
         }
 
         private bool RetroItemExists(int id)
