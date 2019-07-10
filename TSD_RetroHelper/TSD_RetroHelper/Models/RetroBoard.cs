@@ -9,7 +9,7 @@ namespace TSD_RetroHelper.Models
         public int ID { get; set; }
         public string Name { get; set; }
 
-        ICollection<RetroItem> RetroItems { get; set; }
+        public ICollection<RetroItem> RetroItems { get; set; }
 
         [DataType(DataType.Date)]
         public DateTime RetroDate { get; set; } 
